@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Audit Ledger</title>
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <nav class="bottom-dock animate-dock-in" id="global-navigation-dock">
+            <a href="index.html" class="dock-item"> Dashboard</a>
+            <a href="goals.html" class="dock-item"> Canvas</a>
+            <a href="reflection.html" class="dock-item active"> Reflect</a>
+        </nav>
+
+        <main class="main-viewport">
+            <header class="view-header">
+                <h1>Monthly Reflection Ledger</h1>
+                <p style="color: var(--text-secondary)" id="reflection-tally-hero">Total monthly operations completed: 0</p>
+            </header>
+
+            <section class="reflection-ledger" id="reflection-log-canvas">
+                </section>
+        </main>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
