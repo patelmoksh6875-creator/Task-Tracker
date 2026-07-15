@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Focus System — Timeline</title>
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <nav class="bottom-dock animate-dock-in" id="global-navigation-dock">
+            <a href="index.html" class="dock-item"> Dashboard</a>
+            <a href="goals.html" class="dock-item" id="goals-nav-trigger"> Canvas</a>
+            <a href="reflection.html" class="dock-item"> Reflect</a>
+            <a href="timeline.html" class="dock-item active"> Timeline</a>
+        </nav>
+
+        <main class="main-viewport">
+            <header class="view-header">
+                <h1>Timeline</h1>
+                <p style="color: var(--text-secondary)">Plan the next year or two ahead — set a date, and get reminded on the Dashboard when it's time to start preparing.</p>
+            </header>
+
+            <section class="reflect-card">
+                <p class="reflect-card-label">Add an Upcoming Event</p>
+                <form id="timeline-form" class="timeline-form">
+                    <input type="text" id="timeline-title" placeholder="Event title" required>
+                    <div class="timeline-form-row">
+                        <label class="timeline-form-field">
+                            <span>Event Date</span>
+                            <input type="date" id="timeline-date" required>
+                        </label>
+                        <label class="timeline-form-field">
+                            <span>Remind me starting (days before)</span>
+                            <input type="number" id="timeline-lead" min="0" value="7" required>
+                        </label>
+                    </div>
+                    <textarea id="timeline-note" placeholder="What do you need to start doing once this reminder kicks in?" rows="2"></textarea>
+                    <button type="submit">+ Add to Timeline</button>
+                </form>
+            </section>
+
+            <section class="reflect-card">
+                <h3 class="reflect-card-title">Everything on the Timeline</h3>
+                <p class="reflect-card-subtitle">Sorted soonest first. Highlighted entries are inside their reminder window.</p>
+                <div class="timeline-list" id="timeline-list"></div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
