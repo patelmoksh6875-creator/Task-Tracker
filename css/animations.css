@@ -1,0 +1,42 @@
+@keyframes slide-up-dock {
+    from { transform: translateY(100px) translateX(-50%); opacity: 0; }
+    to { transform: translateY(0) translateX(-50%); opacity: 1; }
+}
+
+@keyframes slide-down-dock {
+    from { transform: translateY(0) translateX(-50%); opacity: 1; }
+    to { transform: translateY(100px) translateX(-50%); opacity: 0; }
+}
+
+@keyframes edge-disappear {
+    to { transform: scale(0.9) translateY(-30px); opacity: 0; pointer-events: none; }
+}
+
+@keyframes depth-pop {
+    0% { transform: scale(0.85); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes task-pop-dismiss {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.5; }
+    100% { transform: scale(0); opacity: 0; height: 0; padding: 0; margin: 0; }
+}
+
+@keyframes recurring-complete-pulse {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.04); border-color: var(--accent-color); }
+    100% { transform: scale(1); }
+}
+
+@keyframes timer-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 69, 58, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(255, 69, 58, 0); }
+}
+
+.animate-dock-in { animation: slide-up-dock 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-dock-out { animation: slide-down-dock 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-edge-out { animation: edge-disappear 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-depth-pop { animation: depth-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.animate-task-dismiss { animation: task-pop-dismiss 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards; }
+.animate-recurring-complete { animation: recurring-complete-pulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
