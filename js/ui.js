@@ -169,7 +169,12 @@ export const UIManager = {
         const goalTitleById = {};
         goals.forEach(g => { goalTitleById[g.id] = g.title; });
 
+        // Recurring tasks are exempt from carry-over tracking, same as the
+        // badge on the Canvas — they're never "stale," they're just doing
+        // their job. Without this, a recurring task would sit in this list
+        // forever with an ever-growing day count, since it's never removed.
         const carried = tasks
+            .filter(t => !t.recurring)
             .map(t => ({ task: t, days: this.daysCarried(t) }))
             .filter(entry => entry.days > 0)
             .sort((a, b) => b.days - a.days);
